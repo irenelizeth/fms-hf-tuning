@@ -1,4 +1,4 @@
-## Prompt Tuning on Twitter Complaints
+## Prompt Tuning on Custom Data
 
 This example follows [HF's Prompt Tuning example](https://huggingface.co/docs/peft/main/en/task_guides/clm-prompt-tuning)
 which demonstrates how to apply our tuning to any HF example.
