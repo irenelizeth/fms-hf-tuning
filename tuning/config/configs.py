@@ -40,3 +40,8 @@ class TrainingArguments(transformers.TrainingArguments):
         default=False,
         metadata={"help": "Packing to be enabled in SFT Trainer, default is False"},
     )
+
+    ddp_find_unused_parameters: bool = field(
+        default=False,
+        metadata={"help": "if false, no marking of unused parameters when running backward."},
+    )
