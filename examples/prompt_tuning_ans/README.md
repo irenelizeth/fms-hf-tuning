@@ -11,7 +11,7 @@ Update the script ```ansible_fms_hf_tuning.py```in the variable ```data_file_pat
 
 Make sure the above script put your data in the `SFTTrainer` style (following instruction [here](https://huggingface.co/docs/trl/main/en/sft_trainer#format-your-input-prompts)).
 
-This script should produce a file in the format accepted by `SFTTrainer` (e.g., ans_train_data.json)
+This script should produce a file in the format accepted by `SFTTrainer` (e.g., ans_train_data_ftt.json)
 
 ### Update the FSDP and PEFT configs
 
@@ -54,7 +54,7 @@ Using PEFT method:  LORA with a Granite model.
 ```bash
 # replace these with your values
 MODEL_PATH=GRANITE_MODEL_PATH
-DATA_PATH=ans_train_data.json
+DATA_PATH=ans_train_data_ftt.json
 OUTPUT_PATH=out_granite_lora_ans_train_data
 
 torchrun \
@@ -65,7 +65,7 @@ tuning/sft_trainer.py  \
 --model_name_or_path $MODEL_PATH  \
 --data_path $DATA_PATH  \
 --output_dir $OUTPUT_PATH  \
---peft_method pt \
+--peft_method "lora" \
 --tokenizer_name_or_path $MODEL_PATH  \
 --num_train_epochs 5  \
 --per_device_train_batch_size 1  \
