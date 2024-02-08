@@ -81,8 +81,6 @@ tuning/sft_trainer.py  \
 --warmup_ratio 0.03  \
 --lr_scheduler_type "cosine"  \
 --logging_steps 1  \
---fsdp "full_shard auto_wrap"  \
---fsdp_config tuning/config/fsdp_config.json \
 --include_tokens_per_second  \
 --packing False  \
 --response_template "\n### Response:"  \
